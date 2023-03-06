@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="draw()">
+
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+</body>
+<script>
+ const canvas = document.getElementById("myCanvas");
+ const ctx = canvas.getContext("2d");
+
+
+
+ function draw() {
+ ctx.beginPath();
+ ctx.arc(x,y,10,0, Math.PI * 2, false)
+ ctx.fillStyle = "Pink";
+ ctx.fill();
+ ctx.closePath();
+
+ x += dx;
+ y += dy;
+
+ }
+
+ setInterval(draw,10)
+
+
+ let x = canvas.width / 2;
+ let y = canvas.height - 30;
+
+ let dx = 2;
+ let dy = -2;
+
+</script>
+</html>
